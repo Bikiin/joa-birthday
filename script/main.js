@@ -1,21 +1,18 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     Swal.fire({
-        title: 'Do you want to play music in the background?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.querySelector('.song').play();
-            animationTimeline();
-        } else {
-            animationTimeline();
-        }
-    });
+        backdrop: "linear-gradient(to bottom right, #ffdde1, #ee9ca7)",
+        title: 'Eres la única persona que me ha hecho querer crear algo tan especial.',
+        confirmButtonColor: '#ff4d88',
+        confirmButtonText: '💖',
+        allowOutsideClick: false,
+        allowEscapeKey: false
+    })
+
+    document.querySelector(".swal2-confirm").addEventListener("click", () => {
+        document.querySelector('.song').play();
+        animationTimeline();
+    })
 });
 
 
@@ -25,9 +22,16 @@ const animationTimeline = () => {
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-    textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+    textBoxChars.innerHTML = `<span>${
+        textBoxChars.innerHTML
         .split("")
-        .join("</span><span>")}</span>`;
+        .reduce((acc, current) => {
+            if (current == "<" || current == ">" || acc[acc.length -1] == "<" || acc[acc.length -2] == "<") {
+                return acc + current
+            }
+            return acc + current + "</span><span>"
+        })
+    }</span>`;
 
     hbd.innerHTML = `<span>${hbd.innerHTML
         .split("")
@@ -102,7 +106,7 @@ const animationTimeline = () => {
         0.05
     )
     .to(".fake-btn", 0.1, {
-        backgroundColor: "rgb(127, 206, 248)",
+        backgroundColor: "rgb(245, 172, 255)",
     },
     "+=4")
     .to(
@@ -121,7 +125,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
         scale: 1.2,
         x: 10,
-        backgroundColor: "rgb(21, 161, 237)",
+        backgroundColor: "#ff4d88",
         color: "#fff",
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=2.5")
