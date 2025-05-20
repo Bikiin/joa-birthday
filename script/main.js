@@ -2,7 +2,7 @@
 window.addEventListener('load', () => {
     Swal.fire({
         backdrop: "linear-gradient(to bottom right, #ffdde1, #ee9ca7)",
-        title: 'TEST 1 Eres la única persona que me ha hecho querer crear algo tan especial... porque eres mi ex mas especial...',
+        title: 'Eres la única persona que me ha hecho querer crear algo tan especial... Porque, sí, eres mi ex más especial.',
         confirmButtonColor: '#ff4d88',
         confirmButtonText: '💖',
         allowOutsideClick: false,
