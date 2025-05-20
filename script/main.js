@@ -2,7 +2,7 @@
 window.addEventListener('load', () => {
     Swal.fire({
         backdrop: "linear-gradient(to bottom right, #ffdde1, #ee9ca7)",
-        title: 'TEST Eres la única persona que me ha hecho querer crear algo tan especial.',
+        title: 'TEST 1 Eres la única persona que me ha hecho querer crear algo tan especial.',
         confirmButtonColor: '#ff4d88',
         confirmButtonText: '💖',
         allowOutsideClick: false,
@@ -10,12 +10,7 @@ window.addEventListener('load', () => {
     })
 
     document.querySelector(".swal2-confirm").addEventListener("click", () => {
-        document.querySelector('.song').play()
-        .then(() => {
-            console.log("Audio playing");
-        }).catch((err) => {
-            alert(JSON.stringify(err));
-        });
+        document.querySelector('.song').play();
         animationTimeline();
     })
 });
